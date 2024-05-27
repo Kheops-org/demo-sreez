@@ -9,7 +9,7 @@ image:
   repository: registry.nationtech.io/demo-sreez
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 20240527-195128
+  tag: 20240527-201546
 
 imagePullSecrets:
 - name: nationtech-registry-key
