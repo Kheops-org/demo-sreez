@@ -1,0 +1,33 @@
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: demo-sreez
+  description: My fully featured golang service
+  links:
+    - url: https://github.com/kheops-org/demo-sreez
+      title: Source Code
+      icon: github
+    - url: https://argocd-server-sreez.apps.oc-med.wk.nt.local/applications/sreez/demo-sreez
+      title: ArgoCD Deployment
+      icon: cached
+    - url: http://localhost:8090
+      title: HyperDX Logs and Monitoring
+      icon: monitor_heart
+    - url: https://devspaces.apps.oc-med.wk.nt.local#https://github.com/kheops-org/demo-sreez
+
+      title: VSCode Development Environment
+      icon: code
+  tags:
+    - go
+    - sreez
+  annotations:
+    argocd/app-name: demo-sreez
+    backstage.io/kubernetes-id: demo-sreez
+    github.com/workflows: docker-image.yml
+    github.com/project-slug: kheops-org/demo-sreez
+spec:
+  type: service
+  system: system:default/examples
+  lifecycle: production
+  owner: user:default/medmouine
