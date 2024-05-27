@@ -65,7 +65,7 @@ func main() {
 	// create new logger with opentelemetry zap core and set it globally
 	logger := zap.New(otelzap.NewOtelCore(loggerProvider))
 	zap.ReplaceGlobals(logger)
-	logger.Warn("hello world", zap.String("foo", "bar"))
+	logger.Warn("hello Sreez", zap.String("foo", "bar"))
 
 	http.Handle("/", otelhttp.NewHandler(wrapHandler(logger, ExampleHandler), "example-service"))
 
@@ -93,5 +93,5 @@ func wrapHandler(logger *zap.Logger, handler http.HandlerFunc) http.HandlerFunc 
 
 func ExampleHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "application/json")
-	io.WriteString(w, `{"status":"ok"}`)
+	io.WriteString(w, `{"status":"ok", "demo": "Sreez"}`)
 }
